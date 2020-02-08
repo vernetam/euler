@@ -16,14 +16,16 @@ while check == 0:
         #if the product has odd number of digits compare only the 1st two and two last digits for symmetry
         if len(product) == 5:
             half1 = int(product[0:2])
-            half2 = int(product[3:5])
+            half2 = int(product[4:2:-1])
             if half1 == half2:
                 check = 1
                 print(product)
         #if product has even number of digits compare 1st half to 2nd half
         else:
             half1 = int(product[0:3])
-            half2 = int(product[3:6])
+            half2 = int(product[5:2:-1])
             if half1 == half2:
                 check = 1
                 print(product) 
+
+
