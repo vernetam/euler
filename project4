@@ -1,0 +1,29 @@
+"""
+A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit 
+numbers is 9009 = 91 × 99. Find the largest palindrome made from the product of two 3-digit numbers.
+"""
+#our p-number will be in between 10^4 and 10 ^6. There are 1999 p-numbers from 0-10^6 and 199 p-numbers from 10^4.
+#therefore we will have around 1999-199 = 1800 possible numbers that will satisfy our criteria.
+
+#for each num in range 100-999 multiply it with its reverse. If the number is a palindrome stop.
+check = 0
+while check == 0:
+    for i in range(999,99,-1):
+        #store each int as a string so we can reverse it
+        num1 = str(i)
+        num2 = num1[::-1]
+        product = str(int(num1) * int(num2))
+        #if the product has odd number of digits compare only the 1st two and two last digits for symmetry
+        if len(product) == 5:
+            half1 = int(product[0:2])
+            half2 = int(product[3:5])
+            if half1 == half2:
+                check = 1
+                print(product)
+        #if product has even number of digits compare 1st half to 2nd half
+        else:
+            half1 = int(product[0:3])
+            half2 = int(product[3:6])
+            if half1 == half2:
+                check = 1
+                print(product) 
