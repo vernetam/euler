@@ -1,0 +1,39 @@
+"""
+2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+"""
+#brute force method: loop through a series of numbers using if-statements to see if number if divisible by all numbers
+#between 1-20. start at 2521
+
+i = 1
+check = 0
+while check == 0:
+    if i % 2 != 0:
+        i += 1
+        break
+    if i % 3 != 0:
+        i += 1
+        break
+    if i % 4 != 0:
+        i += 1
+        break
+    if i % 5 != 0:
+        i += 1
+        break
+    if i % 6 != 0:
+        i += 1
+        break
+    if i % 7 != 0:
+        i += 1
+        break
+    if i % 8 != 0:
+        i += 1
+        break
+    if i % 9 != 0:
+        i += 1
+        break
+    if i % 10 != 0:
+        i += 1
+        break
+    check = 1
+print(i)
