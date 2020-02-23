@@ -1,0 +1,40 @@
+"""Find the difference between the sum of the squares of the first one 
+hundred natural numbers and the square of the sum"""
+
+def sum_squares(n):
+    """(num) -> int
+    find the sum of squares up to and including n and return sum
+
+    >>> sum1 = sum_squares(10)
+    >>> sum1
+    385
+
+    >>> sum2 = sum_squares(5)
+    >>> sum2
+    55
+    """
+    total = 0
+    for i in range(1, n+1):
+        total += i**2
+    return total
+
+def square_sum(n):
+    """(num) -> int
+    Find and return the square of the sum up to and including n
+
+    >>> a = square_sum(10)
+    >>> a
+    3025
+
+    >>> b = square_sum(5)
+    >>> b
+    225
+    """
+    return int(((n*(n+1))/2)**2)
+
+print(square_sum(100) - sum_squares(100))
+
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
